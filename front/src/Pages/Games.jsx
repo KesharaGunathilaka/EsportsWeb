@@ -148,11 +148,13 @@ const Games = () => {
             )}
           </div>
           {/* Pagination */}
+          {totalPages > 0 && (
           <div className="pagination">
             <Button className='bg-background border-2 border-white text-white' disabled={currentPage === 1} onClick={() => paginate(currentPage - 1)}>Previous</Button>
             <span> Page {currentPage} of {totalPages} </span>
             <Button className='bg-background border-2 border-white text-white' disabled={currentPage === totalPages} onClick={() => paginate(currentPage + 1)}>Next</Button>
           </div>
+          )}
         </main>
         <aside className="upcoming-games ml-0 bg-background font-sidebar text-center">
           <h3 className='text-lg'>Upcoming Games</h3>

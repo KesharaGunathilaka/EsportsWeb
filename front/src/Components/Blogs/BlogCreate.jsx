@@ -7,8 +7,8 @@ import { jwtDecode } from "jwt-decode";
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import app from '../../firebase';
 import FooterC from '../FooterC/FooterC';
-import { Spinner } from '@nextui-org/react';
 import Backend_URL from '../../config';
+import Spinner from '../../Pages/Spinner';
 
 const BlogCreate = () => {
 

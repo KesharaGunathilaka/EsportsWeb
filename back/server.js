@@ -35,11 +35,11 @@ app.use('/api/users', usersRoute);
 app.use('/api/auth', loginRoute);
 
 // Serve static files from the frontend build folder
-app.use(express.static(path.join(__dirname, 'frontend', 'build')));
+app.use(express.static(path.join(__dirname, 'front', 'dist')));
 
 // Catch-all route to serve index.html for React Router
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html'));
+  res.sendFile(path.join(__dirname, 'front', 'dist', 'index.html'));
 });
 
 // Database connection

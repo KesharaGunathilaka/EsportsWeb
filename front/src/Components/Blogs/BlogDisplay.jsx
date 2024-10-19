@@ -112,11 +112,12 @@ const BlogDisplay = () => {
 
                 {(loggedInUserEmail === selectedBlog.email || loggedInUserEmail === adminEmail) && (
                   <div className="flex space-x-4 mb-4">
-                    <Link to={`/blogedit/${selectedBlog._id}`} >
-                      <Button className="bg-secondary border-2 border-yellow-500 text-xl font-sidebar text-white button hover:bg-yellow-500" variant="solid">
+                    <Button className="bg-secondary border-2 border-yellow-500 text-xl font-sidebar text-white button hover:bg-yellow-500" variant="solid">
+                      <Link to={`/blogedit/${selectedBlog._id}`} >
                         Edit Blog
-                      </Button>
-                    </Link>
+                      </Link>
+                    </Button>
+
                     <Button onClick={() => deleteBlog(selectedBlog._id)} className="bg-secondary border-2 border-red-600 text-xl font-sidebar text-white button hover:bg-red-600" variant="solid">
                       Delete Blog
                     </Button>

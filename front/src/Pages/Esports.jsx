@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import HeaderC from '../Components/HeaderC/HeaderC';
 import { useState } from 'react';
 import axios from "axios";
-import { Link,useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@nextui-org/react';
 import './Esports.css';
 import { jwtDecode } from "jwt-decode";
@@ -109,17 +109,18 @@ const Esports = () => {
       <HeaderC />
       <div className='mt-3 items-center text-center justify-center '>
         {(loggedInUserEmail === adminEmail) && (
-          <Link to="/CreateEsport"><Button className="bg-secondary border-2 border-yellow-500 text-xl font-sidebar text-white button hover:bg-yellow-500" variant="solid">
-            Add Competition
+          <Button className="bg-secondary border-2 border-yellow-500 text-xl font-sidebar text-white button hover:bg-yellow-500" variant="solid">
+            <Link to="/CreateEsport">
+              Add Competition
+            </Link>
           </Button>
-          </Link>
 
         )}
       </div>
       <div className="esports-page">
         <main className="esports-main">
           {isLoading ? ( // Show loading indicator while loading
-            <Spinner/>
+            <Spinner />
           ) : (
             <div className="competitions-list text-slate-200">
               {esports.map((esport) => (
@@ -134,11 +135,11 @@ const Esports = () => {
                     <p>{esport.details.slice(0, 200)}...</p>
                     {loggedInUserEmail === adminEmail && (
                       <div>
-                        <Link to={`/esportedit/${esport._id}`}>
-                          <Button className="bg-secondary border-2 mt-3 border-yellow-500 text-xl font-sidebar text-white button hover:bg-yellow-500" variant="solid">
+                        <Button className="bg-secondary border-2 mt-3 border-yellow-500 text-xl font-sidebar text-white button hover:bg-yellow-500" variant="solid">
+                          <Link to={`/esportedit/${esport._id}`}>
                             Edit Competition
-                          </Button>
-                        </Link>
+                          </Link>
+                        </Button>
                         <Button onClick={() => deleteEsport(esport._id)} className="ml-3 bg-secondary border-2 border-red-600 text-xl font-sidebar text-white button hover:bg-red-600" variant="solid">
                           Delete Competition
                         </Button>

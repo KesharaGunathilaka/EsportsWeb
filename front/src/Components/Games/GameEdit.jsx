@@ -4,6 +4,7 @@ import axios from "axios";
 import HeaderC from '../HeaderC/HeaderC';
 import { toast } from "react-toastify";
 import FooterC from "../FooterC/FooterC";
+import Backend_URL from "../../config";
 
 const GameEdit = () => {
 
@@ -21,7 +22,7 @@ const GameEdit = () => {
     const getGames = async () => {
         try {
             setIsLoading(true);
-            const response = await axios.get(`http://localhost:3000/api/games/${id}`);
+            const response = await axios.get(`${Backend_URL}/api/games/${id}`);
             setGames({
                 name: response.data.name,
                 genres: response.data.genres,
@@ -42,7 +43,7 @@ const GameEdit = () => {
         setIsLoading(true);
        try {
           
-            const response = await axios.put(`http://localhost:3000/api/games/${id}`, games);
+            const response = await axios.put(`${Backend_URL}/api/games/${id}`, games);
 
             toast.success(`Game Updated Successfully`);
             setIsLoading(false);

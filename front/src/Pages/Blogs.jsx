@@ -7,6 +7,7 @@ import BlogC from '../Components/Blogs/BlogC';
 import { Button } from '@nextui-org/react';
 import FooterC from '../Components/FooterC/FooterC';
 import Spinner from './Spinner';
+import Backend_URL from '../config';
 
 const Blogs = () => {
   const token = localStorage.getItem("token");
@@ -21,7 +22,7 @@ const Blogs = () => {
   const getBlogs = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get("http://localhost:3000/api/blogs/");
+      const response = await axios.get(`${Backend_URL}/api/blogs/`);
       console.log(response.data);
       setBlogs(response.data);
       setIsLoading(false);

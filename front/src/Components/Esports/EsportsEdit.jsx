@@ -4,6 +4,7 @@ import axios from "axios";
 import HeaderC from '../HeaderC/HeaderC';
 import { toast } from "react-toastify";
 import FooterC from "../FooterC/FooterC";
+import Backend_URL from "../../config";
 
 const EsportsEdit = () => {
 
@@ -22,7 +23,7 @@ const EsportsEdit = () => {
     const getEsports = async () => {
         try {
             setIsLoading(true);
-            const response = await axios.get(`http://localhost:3000/api/esports/${id}`);
+            const response = await axios.get(`${Backend_URL}/api/esports/${id}`);
             setEsports({
                 name: response.data.name,
                 date: response.data.date,
@@ -44,7 +45,7 @@ const EsportsEdit = () => {
         setIsLoading(true);
         try {
 
-            const response = await axios.put(`http://localhost:3000/api/esports/${id}`, esports);
+            const response = await axios.put(`${Backend_URL}/api/esports/${id}`, esports);
 
             toast.success(`Competition Updated Successfully`);
             setIsLoading(false);

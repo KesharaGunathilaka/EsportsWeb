@@ -5,6 +5,7 @@ import HeaderC from '../HeaderC/HeaderC';
 import { toast } from "react-toastify";
 import { jwtDecode } from "jwt-decode";
 import FooterC from "../FooterC/FooterC";
+import Backend_URL from "../../config";
 
 const BlogEdit = () => {
     const { id } = useParams();
@@ -20,7 +21,7 @@ const BlogEdit = () => {
     const getBlogs = async () => {
         try {
             setIsLoading(true);
-            const response = await axios.get(`http://localhost:3000/api/blogs/${id}`);
+            const response = await axios.get(`${Backend_URL}/api/blogs/${id}`);
             setBlogs({
                 name: response.data.name,
                 details: response.data.details
@@ -62,7 +63,7 @@ const BlogEdit = () => {
         e.preventDefault();
         setIsLoading(true);
         try {
-            const response = await axios.put(`http://localhost:3000/api/blogs/${id}`, blogs);
+            const response = await axios.put(`${Backend_URL}/api/blogs/${id}`, blogs);
             toast.success(`Blog Updated Successfully`);
             setIsLoading(false);
             navigate(`/blogdis/${id}`);

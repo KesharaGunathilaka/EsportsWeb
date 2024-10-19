@@ -8,6 +8,7 @@ import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/
 import app from '../../firebase';
 import FooterC from '../FooterC/FooterC';
 import { Spinner } from '@nextui-org/react';
+import Backend_URL from '../../config';
 
 const BlogCreate = () => {
 
@@ -74,7 +75,7 @@ const BlogCreate = () => {
         }
         try {
             setIsLoading(true);
-            const response = await axios.post("http://localhost:3000/api/blogs", {
+            const response = await axios.post(`${Backend_URL}/api/blogs`, {
                 name: name,
                 details: details,
                 category: category,

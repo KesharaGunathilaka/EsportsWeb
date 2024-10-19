@@ -9,6 +9,7 @@ import { jwtDecode } from "jwt-decode";
 import FooterC from '../Components/FooterC/FooterC';
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
+import Backend_URL from '../config';
 
 
 const Esports = () => {
@@ -28,7 +29,7 @@ const Esports = () => {
   const getEsports = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get("http://localhost:3000/api/esports/");
+      const response = await axios.get(`${Backend_URL}/api/esports/`);
       console.log(response.data);
       setEsports(response.data);
       setIsLoading(false);
@@ -49,7 +50,7 @@ const Esports = () => {
     })
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:3000/api/esports/${id}`);
+        await axios.delete(`${Backend_URL}/api/esports/${id}`);
         toast.success("Competition Deleted Successfully");
         navigate("/");
 

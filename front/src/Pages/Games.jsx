@@ -98,11 +98,13 @@ const Games = () => {
           </div>
           <div className='flex flex-col items-center'>
             {(loggedInUserEmail === adminEmail) && (
-              <Link to="/CreateGame">
-                <Button className="bg-secondary border-2 border-red-600 text-xl font-sidebar text-white button hover:bg-red-600" variant="solid">
+
+              <Button className="bg-secondary border-2 border-red-600 text-xl font-sidebar text-white button hover:bg-red-600" variant="solid">
+                <Link to="/CreateGame">
                   Add Game
-                </Button>
-              </Link>
+                </Link>
+              </Button>
+
             )}
           </div>
           <div className="hidden lg:block categories font-sidebar text-lg">
@@ -149,11 +151,11 @@ const Games = () => {
           </div>
           {/* Pagination */}
           {totalPages > 0 && (
-          <div className="pagination">
-            <Button className='bg-background border-2 border-white text-white' disabled={currentPage === 1} onClick={() => paginate(currentPage - 1)}>Previous</Button>
-            <span> Page {currentPage} of {totalPages} </span>
-            <Button className='bg-background border-2 border-white text-white' disabled={currentPage === totalPages} onClick={() => paginate(currentPage + 1)}>Next</Button>
-          </div>
+            <div className="pagination">
+              <Button className='bg-background border-2 border-white text-white' disabled={currentPage === 1} onClick={() => paginate(currentPage - 1)}>Previous</Button>
+              <span> Page {currentPage} of {totalPages} </span>
+              <Button className='bg-background border-2 border-white text-white' disabled={currentPage === totalPages} onClick={() => paginate(currentPage + 1)}>Next</Button>
+            </div>
           )}
         </main>
         <aside className="upcoming-games ml-0 bg-background font-sidebar text-center">

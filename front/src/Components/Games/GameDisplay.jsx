@@ -111,15 +111,17 @@ const GameDisplay = () => {
 
                 {(loggedInUserEmail === adminEmail) && (
                   <div className="flex space-x-4 mb-4">
-                    <Link to={`/gameedit/${selectedGame._id}`} >
-                      <Button className="bg-secondary border-2 border-yellow-500 text-xl font-sidebar text-white button hover:bg-yellow-500" variant="solid">
+
+                    <Button className="bg-secondary border-2 border-yellow-500 text-xl font-sidebar text-white button hover:bg-yellow-500" variant="solid">
+                      <Link to={`/gameedit/${selectedGame._id}`} >
                         Edit Game
-                      </Button>
-                  </Link>
-                    
+                      </Link>
+                    </Button>
+
+
                     <Button onClick={() => deleteGame(selectedGame._id)} className="bg-secondary border-2 border-red-600 text-xl font-sidebar text-white button hover:bg-red-600" variant="solid">
-                    Delete Game
-                      </Button>
+                      Delete Game
+                    </Button>
                   </div>
                 )}
 
@@ -142,7 +144,7 @@ const GameDisplay = () => {
               </div> */}
               </>
             )}
-            {isLoading && <Spinner/>}
+            {isLoading && <Spinner />}
           </main>
         </div>
       </div>

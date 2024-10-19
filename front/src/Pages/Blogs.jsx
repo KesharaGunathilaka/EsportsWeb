@@ -101,11 +101,13 @@ const Blogs = () => {
           </div>
           <div className='flex flex-col items-center'>
             {token ? (
-              <Link to="/CreateBlog">
-                <Button className="bg-secondary border-2 border-red-600 text-xl font-sidebar text-white button hover:bg-red-600" variant="solid">
+
+              <Button className="bg-secondary border-2 border-red-600 text-xl font-sidebar text-white button hover:bg-red-600" variant="solid">
+                <Link to="/CreateBlog">
                   Add Blog
-                </Button>
-              </Link>
+                </Link>
+              </Button>
+
             ) : null}
           </div>
           <div className="hidden lg:block categories text-lg text-slate-400">

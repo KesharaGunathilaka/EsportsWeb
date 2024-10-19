@@ -1,0 +1,40 @@
+.hypnotic-1 {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #00FF99; /* Add border color */
+    display: grid;
+    animation: h1 4s infinite linear; /* Set the animation */
+    position: relative; /* Ensure positioning works */
+  }
+  
+  .hypnotic-1::before,
+  .hypnotic-1::after {
+    content: "";
+    position: absolute; /* Position the pseudo-elements */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 2px solid #F1B4B4; /* Set the border color */
+    animation: inherit;
+  }
+  
+  .hypnotic-1::before {
+    width: 70.7%;
+    height: 70.7%;
+  }
+  
+  .hypnotic-1::after {
+    width: 50%;
+    height: 50%;
+    border-color: #18023c; /* Different color for inner circle */
+    animation-duration: 2s; /* Faster animation for inner circle */
+  }
+  
+  @keyframes h1 {
+    100% {
+      transform: rotate(1turn); /* Rotate 360 degrees */
+    }
+  }
+  

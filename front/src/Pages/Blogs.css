@@ -1,0 +1,162 @@
+.blog-page {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+/* Sidebar and upcoming games styling */
+.sidebar,
+.upcoming-games {
+  width: 15%;
+  padding: 20px;
+  background-color: #f4f4f4;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid red;
+  border-radius: 4px;
+  background-color: #10122A;
+  color: white;
+}
+
+.categories {
+  margin-top: 20px;
+}
+
+.categories h3 {
+  margin-bottom: 10px;
+}
+
+.categories ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.categories li {
+  padding: 10px 10px;
+  cursor: pointer;
+}
+
+.categories li:hover {
+  text-decoration: underline;
+}
+
+.blog-main {
+  width: 70%;
+  padding: 20px;
+}
+
+.posts-list {
+  display: block; /* Changed to block for list-like appearance */
+}
+
+.post-item {
+  display: block; /* Display as block for blog post layout */
+  margin-bottom: 20px; /* Spacing between list items */
+  padding: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s; /* Smooth transition */
+}
+
+.post-item:hover {
+  transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+.post-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-details h2 {
+  margin: 0 0 10px;
+}
+
+.post-stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1em;
+  color: #777;
+  margin-top: 10px;
+}
+
+.upcoming-games h3 {
+  margin-bottom: 10px;
+}
+
+.upcoming-games ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.upcoming-games li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.selected-category {
+  color: red; /* Example: red */
+  font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .sidebar,
+  .upcoming-games {
+      width: 100%; /* Stack sidebar and upcoming games on top */
+      margin-left: 0; /* Remove margin for small screens */
+  }
+
+  .blog-main {
+    width: 100%; /* Full width for main blog area */
+    margin: 0 auto; /* Center the element */
+    padding: 20px;
+  }
+
+  .blog-page {
+      flex-direction: column; /* Stack elements vertically */
+  }
+
+  .post-item {
+      padding: 15px; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .search-bar input {
+      padding: 8px; /* Adjust input padding for smaller screens */
+  }
+
+  .categories {
+    margin-top: 20px;
+}
+
+.categories h3 {
+    margin-bottom: 10px;
+}
+
+.categories ul {
+    display: flex; /* Use flexbox to display items horizontally */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+    list-style-type: none; /* Remove default list styles */
+    padding: 0;
+}
+
+.categories li {
+    padding: 10px 20px; /* Add horizontal padding for better spacing */
+    cursor: pointer;
+    margin-right: 15px; /* Space between items */
+    border-radius: 4px; /* Optional: rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+  .post-stats {
+      font-size: 0.9em; /* Smaller font size for stats */
+  }
+}

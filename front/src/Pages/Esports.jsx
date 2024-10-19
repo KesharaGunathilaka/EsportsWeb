@@ -3,13 +3,14 @@ import HeaderC from '../Components/HeaderC/HeaderC';
 import { useState } from 'react';
 import axios from "axios";
 import { Link,useNavigate } from 'react-router-dom';
-import { Button, Spinner } from '@nextui-org/react';
+import { Button } from '@nextui-org/react';
 import './Esports.css';
 import { jwtDecode } from "jwt-decode";
 import FooterC from '../Components/FooterC/FooterC';
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import Backend_URL from '../config';
+import Spinner from './Spinner';
 
 
 const Esports = () => {
@@ -118,7 +119,7 @@ const Esports = () => {
       <div className="esports-page">
         <main className="esports-main">
           {isLoading ? ( // Show loading indicator while loading
-            <Spinner />
+            <Spinner/>
           ) : (
             <div className="competitions-list text-slate-200">
               {esports.map((esport) => (

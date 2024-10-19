@@ -1,0 +1,76 @@
+.esports-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .esports-main {
+    width: 80%;
+  }
+  
+  .competitions-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .competition-item {
+    width: 45%;
+    width: calc(100% - 40px);
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid goldenrod;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #10122A;
+  }
+  
+  .competition-item img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .competition-details {
+    width: 100%;
+    text-align: left;
+  }
+  
+  .competition-details h2 {
+    margin: 0 0 10px;
+  }
+  
+  .previous-tournaments {
+    width: 80%;
+    margin-top: 40px;
+  }
+  
+  .previous-tournaments h2 {
+    margin-bottom: 20px;
+  }
+  
+  .previous-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .previous-item {
+    width: 45%;
+    width: calc(100% - 40px);
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+  }
+  
+  @media (min-width: 640px) {
+  .competition-item,
+  .previous-item {
+    width: calc(45% - 40px); /* Two items per row on small screens */
+  }
+}

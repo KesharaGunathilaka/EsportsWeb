@@ -1,0 +1,118 @@
+.games-page {
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 15%;
+    padding: 20px;
+    background-color: #f4f4f4;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-bar {
+    margin-bottom: 20px;
+  }
+  
+  .search-bar input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .categories {
+    margin-top: 20px;
+  }
+  
+  .categories h3 {
+    margin-bottom: 10px;
+  }
+  
+  .categories ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .categories li {
+    padding: 10px 10px;
+    cursor: pointer;
+  }
+  
+  .categories li:hover {
+    text-decoration: underline;
+  }
+  
+  .games-main {
+    width: 70%;
+    padding: 20px;
+  }
+  
+  .games-list {
+    display: block; /* Changed to block for list-like appearance */
+  }
+  
+  .game-item {
+    display: flex; /* Flexbox to align items horizontally */
+    justify-content: left; /* Horizontally center items */
+    align-items: flex-start; /* Align items to the start vertically */
+    margin-bottom: 20px; /* Spacing between list items */
+    padding: 10px;
+    background-color: #10122A;
+    border: 1px solid red; /* Initial border color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+  }
+  
+  .game-item:hover {
+    border-color: whitesmoke; /* Change border color on hover */
+  }
+  
+  
+  .game-item img {
+    width: 600px; /* Fixed width for images */
+    height: auto;
+    margin-right: 20px; /* Spacing between image and title */
+  }
+  
+  .game-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .game-details h3 {
+    margin: 0 0 10px;
+  }
+  
+  .star-reviews {
+    font-size: 1.2em;
+    color: gold;
+    margin-top: 10px;
+  }
+  
+  .upcoming-games {
+    width: 15%;
+    padding: 20px;
+    background-color: #f4f4f4;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 10px;
+  }
+  
+  .upcoming-games h3 {
+    margin-bottom: 10px;
+  }
+  
+  .upcoming-games ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .upcoming-games li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .game-item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+  }
+  

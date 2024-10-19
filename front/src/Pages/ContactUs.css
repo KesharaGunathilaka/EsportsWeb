@@ -1,0 +1,30 @@
+.contactus-section {
+  padding: 20px; /* Base padding */
+}
+
+.contact-container {
+  display: flex; /* Base flex container */
+  flex-direction: column; /* Column layout for mobile */
+  margin-top: 20px; /* Space above the contact items */
+}
+
+.contact-item {
+  width: 100%; /* Full width for small screens */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  background-color: #1e1e2f;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Responsive styles for medium and larger screens */
+@media (min-width: 768px) {
+  .contact-container {
+      flex-direction: row; /* Row layout for larger screens */
+      justify-content: space-between; /* Space between items */
+  }
+  
+  .contact-item {
+      width: 30%; /* Set width for larger screens */
+  }
+}

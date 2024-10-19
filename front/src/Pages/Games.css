@@ -1,0 +1,148 @@
+.games-page {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap in smaller screens */
+}
+
+.sidebar {
+  width: 15%;
+  padding: 20px;
+  background-color: #f4f4f4;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid red; 
+  border-radius: 4px;
+  background-color: #10122A;
+  color: white; 
+}
+
+.categories {
+  margin-top: 20px;
+}
+
+.categories h3 {
+  margin-bottom: 10px;
+}
+
+.categories ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.categories li {
+  padding: 10px 10px;
+  cursor: pointer;
+}
+
+.categories li:hover {
+  text-decoration: underline;
+}
+
+.games-main {
+  width: 70%;
+  padding: 20px;
+}
+
+.games-list {
+  display: block; /* Changed to block for list-like appearance */
+}
+
+.game-item {
+  display: flex; /* Flexbox to align items horizontally */
+  justify-content: left; /* Horizontally center items */
+  align-items: flex-start; /* Align items to the start vertically */
+  margin-bottom: 20px; /* Spacing between list items */
+  padding: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.game-item img {
+  width: 150px; /* Adjusted for smaller screens */
+  height: auto;
+  margin-right: 20px; /* Spacing between image and title */
+}
+
+.game-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.game-details h3 {
+  margin: 0 0 10px;
+}
+
+.star-reviews {
+  font-size: 1.2em;
+  color: gold;
+  margin-top: 10px;
+}
+
+.upcoming-games {
+  width: 15%;
+  padding: 20px;
+  background-color: #f4f4f4;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-left: 10px;
+}
+
+.upcoming-games h3 {
+  margin-bottom: 10px;
+}
+
+.upcoming-games ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.upcoming-games li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.selected-category {
+  color: red; /* Example: yellow */
+  font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .sidebar,
+  .upcoming-games {
+    width: 100%; /* Full width on smaller screens */
+    margin-left: 0; /* Remove left margin */
+  }
+
+  .games-main {
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  .game-item {
+    flex-direction: column; /* Stack image and details vertically */
+    align-items: center; /* Center items */
+  }
+
+  .game-item img {
+    width: 100%; /* Make images responsive */
+    margin-right: 0; /* Remove right margin */
+    margin-bottom: 10px; /* Add bottom margin for spacing */
+  }
+}
+
+@media (max-width: 480px) {
+  .search-bar input {
+    padding: 8px; /* Smaller padding on mobile */
+  }
+
+  .game-details h3 {
+    font-size: 1.2em; /* Adjust font size */
+  }
+}
+

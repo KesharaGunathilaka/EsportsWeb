@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 import { jwtDecode } from "jwt-decode";
 import FooterC from "../FooterC/FooterC";
 import Spinner from "../../Pages/Spinner";
+import Backend_URL from "../../config";
 
 
 const BlogDisplay = () => {
@@ -28,7 +29,7 @@ const BlogDisplay = () => {
   const getBlogs = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get("http://localhost:3000/api/blogs/");
+      const response = await axios.get(`${Backend_URL}/api/blogs/`);
       setBlogs(response.data);
       setSelectedBlog(response.data.find(blog => blog._id === id));
       setIsLoading(false);
@@ -57,7 +58,7 @@ const BlogDisplay = () => {
     })
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:3000/api/blogs/${id}`);
+        await axios.delete(`${Backend_URL}/api/blogs/${id}`);
         toast.success("Blog Deleted Successfully");
         navigate("/Blogs");
 

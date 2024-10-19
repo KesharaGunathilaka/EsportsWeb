@@ -7,6 +7,7 @@ import {jwtDecode} from "jwt-decode";
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import app from '../../firebase';
 import FooterC from '../FooterC/FooterC';
+import Backend_URL from '../../config';
 
 const EsportsCreate = () => {
 
@@ -99,7 +100,7 @@ const EsportsCreate = () => {
         console.log("Submitting blog with user:", username, "and email:", email); // Log username and email before submitting
         try {
             setIsLoading(true);
-            const response = await axios.post("http://localhost:3000/api/esports", { 
+            const response = await axios.post(`${Backend_URL}/api/esports`, { 
                 name: name, 
                 date: date, 
                 location: location,

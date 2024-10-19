@@ -8,6 +8,7 @@ import { Button } from "@nextui-org/react";
 import { jwtDecode } from "jwt-decode";
 import FooterC from '../Components/FooterC/FooterC';
 import Spinner from './Spinner';
+import Backend_URL from '../config';
 
 const Games = () => {
   const token = localStorage.getItem("token");
@@ -29,7 +30,7 @@ const Games = () => {
   const getGames = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get("http://localhost:3000/api/games/");
+      const response = await axios.get(`${Backend_URL}/api/games/`);
       console.log(response.data);
       setGames(response.data);
       setIsLoading(false);

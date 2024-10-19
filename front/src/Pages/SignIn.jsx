@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import FooterC from '../Components/FooterC/FooterC';
+import Backend_URL from '../config';
 
 
 const SignIn = () => {
@@ -23,7 +24,7 @@ const SignIn = () => {
     }
     try {
       setIsLoading(true);
-      const response = await axios.post("http://localhost:3000/api/auth", { email: email, password: password });
+      const response = await axios.post(`${Backend_URL}/api/auth`, { email: email, password: password });
       localStorage.setItem("token", response.data.token);
       setIsLoading(false);
       navigate("/");

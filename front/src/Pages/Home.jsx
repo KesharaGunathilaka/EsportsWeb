@@ -12,6 +12,7 @@ import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import FooterC from '../Components/FooterC/FooterC';
 import Spinner from './Spinner';
+import Backend_URL from '../config';
 
 function Home() {
   const [blogs, setBlogs] = useState([]);
@@ -21,7 +22,7 @@ function Home() {
   const getBlogs = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get("http://localhost:3000/api/blogs/");
+      const response = await axios.get(`${Backend_URL}/api/blogs/`);
       console.log(response.data);
       setBlogs(response.data);
       setIsLoading(false);

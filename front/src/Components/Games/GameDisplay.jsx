@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 import { jwtDecode } from "jwt-decode";
 import FooterC from "../FooterC/FooterC";
 import Spinner from "../../Pages/Spinner";
+import Backend_URL from "../../config";
 
 const GameDisplay = () => {
 
@@ -28,7 +29,7 @@ const GameDisplay = () => {
   const getGames = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get("http://localhost:3000/api/games/");
+      const response = await axios.get(`${Backend_URL}/api/games/`);
       setGames(response.data);
       setSelectedGame(response.data.find(game => game._id === id));
       setIsLoading(false);
@@ -57,7 +58,7 @@ const GameDisplay = () => {
     })
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:3000/api/games/${id}`);
+        await axios.delete(`${Backend_URL}/api/games/${id}`);
         toast.success("Game Deleted Successfully");
         navigate("/Games");
 

@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import {toast} from "react-toastify";
 import FooterC from '../Components/FooterC/FooterC';
+import Backend_URL from '../config';
 
 const SignUp = () => {
 
@@ -25,7 +26,7 @@ const SignUp = () => {
     }
     try {
       setIsLoading(true);
-      const response = await axios.post("http://localhost:3000/api/users",{name:name, email:email, password:password})
+      const response = await axios.post(`${Backend_URL}/api/users`,{name:name, email:email, password:password})
       toast.success(`Sucessfully Registered`);
       setIsLoading(false);
       navigate("/");

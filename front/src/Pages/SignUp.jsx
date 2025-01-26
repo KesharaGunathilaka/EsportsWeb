@@ -18,25 +18,47 @@ const SignUp = () => {
 
 
 
-  const regUser = async(e) =>{
+  // const regUser = async(e) =>{
+  //   e.preventDefault();
+  //   if(name === "" || email === "" || password === ""){
+  //     alert('Please fill out all inputs');
+  //     return;
+  //   }
+  //   try {
+  //     setIsLoading(true);
+  //     const response = await axios.post(`${Backend_URL}/api/users`,{name:name, email:email, password:password})
+  //     toast.success(`Sucessfully Registered`);
+  //     setIsLoading(false);
+  //     navigate("/");
+  //   } catch (error) {
+  //     toast.error(error.message);
+  //     setIsLoading(false);
+      
+  //   }
+  // } 
+
+  const regUser = async (e) => {
     e.preventDefault();
-    if(name === "" || email === "" || password === ""){
-      alert('Please fill out all inputs');
-      return;
+    if (name === "" || email === "" || password === "") {
+        toast.error("Please fill out all inputs");
+        return;
     }
     try {
-      setIsLoading(true);
-      const response = await axios.post(`${Backend_URL}/api/users`,{name:name, email:email, password:password})
-      toast.success(`Sucessfully Registered`);
-      setIsLoading(false);
-      navigate("/");
+        setIsLoading(true);
+        await axios.post(`${Backend_URL}/api/users`, { name, email, password });
+        toast.success("Successfully Registered");
+        setIsLoading(false);
+        navigate("/");
     } catch (error) {
-      toast.error(error.message);
-      setIsLoading(false);
-      
+        setIsLoading(false);
+        // Display the specific error message from the backend, if available
+        if (error.response && error.response.data && error.response.data.message) {
+            toast.error(error.response.data.message);
+        } else {
+            toast.error("Registration failed. Please try again.");
+        }
     }
-  } 
-
+};
   
   return (
     <div>

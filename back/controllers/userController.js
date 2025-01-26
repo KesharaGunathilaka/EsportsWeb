@@ -22,44 +22,23 @@ const getUser = asyncHandler(async (req, res) => {
     }
 })
 
-// const createUser = async (req, res) => {
-//     try {
-//         const { name, email, password } = req.body;
-//         const hashedPassword = await bcrypt.hash(password, 10);
-//         const newUser = new User({
-//             name,
-//             email,
-//             password: hashedPassword
-//         });
-//         const savedUser = await newUser.save();
-//         res.status(200).json(savedUser);
-//     } catch (error) {
-//         console.error(error.message);
-//         res.status(500).json({ message: error.message });
-//     }
-// }
-
 const createUser = async (req, res) => {
     try {
         const { name, email, password } = req.body;
 
-        // Check if the email is already registered
         const existingUser = await User.findOne({ email });
         if (existingUser) {
             return res.status(400).json({ message: "An account with this email already exists." });
         }
 
-        // Hash the password
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        // Create a new user
         const newUser = new User({
             name,
             email,
             password: hashedPassword
         });
 
-        // Save the new user to the database
         const savedUser = await newUser.save();
         res.status(201).json(savedUser);
     } catch (error) {

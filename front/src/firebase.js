@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCwsNty4m4NlpmQ3sO04dh7wEbI8lkZdM8",
-  authDomain: "esports-7ffb6.firebaseapp.com",
-  projectId: "esports-7ffb6",
-  storageBucket: "esports-7ffb6.appspot.com",
-  messagingSenderId: "289587930153",
-  appId: "1:289587930153:web:4a7a86bde88754bcace838"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 // Initialize Firebase
